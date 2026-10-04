@@ -1,18 +1,11 @@
-// This is a basic Flutter widget test.
-//
-// To perform an interaction with a widget in your test, use the WidgetTester
-// utility in the flutter_test package. For example, you can send tap and scroll
-// gestures. You can also use WidgetTester to find child widgets in the widget
-// tree, read text, and verify that the values of widget properties are correct.
-
-
-import 'package:bitrise_flutter/main.dart';
-
 import 'package:flutter_test/flutter_test.dart';
+import 'package:lms_flutter_app/main.dart';
 
 void main() {
-  testWidgets('Text is already displayed', (WidgetTester tester) async {
-    await tester.pumpWidget(MyApp());
-    expect(find.text('Hello Bitrisers!'), findsOneWidget);
+  testWidgets('shows the LMS greeting', (WidgetTester tester) async {
+    await tester.pumpWidget(const LMSApp());
+
+    expect(find.byType(LMSHomePage), findsOneWidget);
+    expect(find.text('Hello LMS User'), findsOneWidget);
   });
 }

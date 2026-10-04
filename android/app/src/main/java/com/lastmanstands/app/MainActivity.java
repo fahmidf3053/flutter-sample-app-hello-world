@@ -1,4 +1,4 @@
-package dev.glasberg.example;
+package com.lastmanstands.app;
 
 import io.flutter.embedding.android.FlutterActivity;
 

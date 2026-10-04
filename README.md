@@ -1,41 +1,63 @@
-# Flutter Sample App - Hello World
+# Last Man Stands (LMS) - Mobile App Wrapper
 
-This is a simple [Flutter](https://flutter.dev/) ([Dart](https://dart.dev/)) app with a single view. The intention of this application is to demonstrate the usage of the mobile CI/CD functionality within [Bitrise](https://bitrise.io).
+This is a Flutter-based mobile app wrapper for the Last Man Stands website: `https://testapp.lastmanstands.com/`. It runs on both Android and iOS devices.
 
-<p align="center" spacing="10">
-    <kbd>
-        <img src="media/preview.png" height="500px" />
-    </kbd>
-</p>
+## Setup Instructions
 
-## Usage
+### 1. Install Flutter SDK
+If you don't have Flutter installed:
+- Download and install the [Flutter SDK](https://docs.flutter.dev/get-started/install).
+- Add Flutter to your system's `PATH`.
+- Verify the installation by running:
+  ```bash
+  flutter doctor
+  ```
 
-The intention of this app is to be used with Bitrise. To use this application with Bitrise please do the following:
+### 2. Set Up IDE / Editor
+You can use **VS Code** or **Android Studio**:
+- Install the **Flutter** and **Dart** extensions/plugins in your editor.
 
-1. Fork (or copy, for other source control platforms) this repository to your source control account.  
-2. [Create a new account or log into an existing account.](https://app.bitrise.io/users/sign_up)
-3. [Create a new Bitrise project](https://devcenter.bitrise.io/en/getting-started.html#signing-up-for-bitrise-72050) using this project.
-4. Start building!
+### 3. Fetch Dependencies
+Navigate to this project directory in your terminal and run:
+```bash
+flutter pub get
+```
 
-## Helpful Resources
+---
 
-* [Official Documentation](https://devcenter.bitrise.io/)
-* [Bitrise Blog](https://blog.bitrise.io)
-* [Bitrise YouTube](https://www.youtube.com/c/bitriseio)
+## Running the Application
 
-## Support and Contribution
+### 1. Start an Emulator / Simulator
+- Start an Android Emulator (via Android Studio Device Manager).
+- Or start an iOS Simulator (on macOS, run `open -a Simulator`).
+- Or connect a physical mobile device with USB debugging enabled.
 
-Please feel free to submit PR's, issues or requests to this project directly.
+### 2. Run the App
+Execute the following command in the root of the project:
+```bash
+flutter run
+```
+If you have multiple devices connected, you can specify one:
+```bash
+flutter run -d <device_name>
+```
 
-If you have any other questions, comments, or looking for more information on Bitrise please check out:
+---
 
-* [Bitrise Public Slack](https://chat.bitrise.io/)
-* [Bitrise Community Forums](https://discuss.bitrise.io/)
+## Building the Release Versions
 
-Or reach out to us directly via:
+### Android
+To build a release APK:
+```bash
+flutter build apk --release
+```
+To build an Android App Bundle (AAB) for Google Play:
+```bash
+flutter build appbundle --release
+```
 
-* [letsconnect@bitrise.io](mailto:developers@mariadb.com)
-* [Bitrise Twitter](https://twitter.com/bitrise)
-
-## License <a name="license"></a>
-[![License](https://img.shields.io/badge/License-MIT-blue.svg?style=plastic)](https://opensource.org/licenses/MIT)
+### iOS (Requires macOS)
+To build a release IPA/Archive:
+```bash
+flutter build ios --release
+```

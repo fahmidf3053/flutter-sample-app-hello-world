@@ -1,22 +1,19 @@
-name: bitrise_flutter
-description: Bitrise Flutter Examples.
-publish_to: "none"
+name: lms_flutter_app
+description: "A simple LMS greeting app."
+publish_to: 'none'
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.13.0 <3.0.0"
+  sdk: '>=3.0.0 <4.0.0'
 
 dependencies:
   flutter:
     sdk: flutter
-  image_pixels:
 
 dev_dependencies:
+  flutter_lints: ^3.0.0
   flutter_test:
     sdk: flutter
 
 flutter:
   uses-material-design: true
-
-  assets:
-    - lib/images/

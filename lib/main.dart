@@ -1,56 +1,41 @@
 import 'package:flutter/material.dart';
-import 'package:image_pixels/image_pixels.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const LMSApp());
 }
 
-class MyApp extends StatelessWidget {
+class LMSApp extends StatelessWidget {
+  const LMSApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Hello Bitrisers!',
+      title: 'LMS',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
+        useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Hello Bitrisers!'),
+      home: const LMSHomePage(),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, this.title}) : super(key: key);
-
-  final String? title;
-
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  final AssetImage bitriseFlutter = const AssetImage("lib/images/BitriseFlutter.png");
+class LMSHomePage extends StatelessWidget {
+  const LMSHomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title!),
-      ),
-      body: SizedBox.expand(
-        child: Column(
-          children: <Widget>[
-            Expanded(
-              child: ImagePixels.container(
-                imageProvider: bitriseFlutter,
-                child: Container(
-                  alignment: Alignment.center,
-                  child: SizedBox(width: 600, child: Image(image: bitriseFlutter)),
-                ),
-              ),
+    return const Scaffold(
+      body: SafeArea(
+        child: Center(
+          child: Text(
+            'Hello LMS User',
+            style: TextStyle(
+              fontSize: 28,
+              fontWeight: FontWeight.w600,
             ),
-            //
-            //
-          ],
+          ),
         ),
       ),
     );
